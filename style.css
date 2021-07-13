@@ -1,0 +1,297 @@
+ * {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: hsl(0, 0%, 95%);
+  color: #000100;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+}
+
+/* top header */
+.header {
+  padding: 0px 0px 0px 178px;
+  color: #94C5CC;
+  font-family: 'Montserrat Bold', sans-serif;
+}
+
+#container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200%;
+}
+
+html {
+    scroll-behavior: smooth;
+  }
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .content {
+  padding-top: 60px;
+}
+
+#topmenu {
+  position: fixed;
+    z-index:9000;
+  overflow: auto;
+  background-color: #F8F8F8;
+  transition: all 0.5s linear;
+  margin: 0px 0px 0px 0px;
+}
+
+
+/* navigation bar */
+.topnav {
+  padding: 21px 158px 0px 400px;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: hsl(188, 35%, 69%);
+  text-align: center;
+  padding: 11px 11px;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.topnav a:hover {
+  color: hsl(189, 17%, 51%);
+  text-decoration: underline;
+}
+
+.topnav a.active {
+  color: hsl(190, 19%, 42%);
+}
+
+.container {
+  background-color: #F8F8F8;
+  float: left;
+  margin-left: 178px;
+  margin-right: 199px;
+  margin-bottom: 100px;
+}
+
+.container p{
+  text-align: justify;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.imgcont {
+  position: relative;
+  width: 1165px;
+  height: auto;
+  object-fit: cover;
+}
+
+/* only for header and nav */
+.column {
+  float: left;
+  width: fit-content;
+}
+
+
+.section-title {
+  font-size: 50px;
+  font-family: 'Montserrat Bold', sans-serif;
+  font-weight: bold;
+  color: hsl(204, 33%, 76%);
+  margin: 10px;
+}
+
+
+/* The actual timeline (the vertical ruler) */
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: hsl(206, 71%, 89%);
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+/* Container around content */
+.cont {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+/* The circles on the timeline */
+.cont::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -17px;
+  background-color: hsl(204, 33%, 76%);
+  border: 4px solid hsl(204, 33%, 76%);
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Place the container to the left */
+.left {
+  left: 0;
+}
+
+/* Place the container to the right */
+.right {
+  left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid white;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent white;
+}
+
+/* Add arrows to the right container (pointing left) */
+.right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+  left: -16px;
+}
+
+/* The actual content */
+.content {
+  padding: 20px 30px;
+  background-color: white;
+  position: relative;
+  border-radius: 6px;
+}
+
+.content p{
+  margin: 10px 10px;
+}
+
+#biography {
+  background-color: #F8F8F8;
+}
+
+.slide-container {
+    width: 600px;
+    height: 450px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    text-align: center;
+}
+
+.image-container {
+    width: 2000px;
+    height: 400px;
+    position: relative;
+    transition: left 2s;
+    -webkit-transition: left 2s;
+    -moz-transition: left 2s;
+    -o-transition: left 2s;
+}
+
+.slider-image {
+    float: left;
+    margin: 0px;
+    padding: 0px;
+    width: 600px;
+}
+
+.button-container {
+    top: -20px;
+    position: relative;
+}
+
+.slider-button {
+    display: inline-block;
+    height: 10px;
+    width: 10px;
+    border-radius: 5px;
+    background-color: hsl(204, 25%, 50%);
+}
+
+#slider-image-1:target ~ .image-container{
+    left: 0px;
+}
+
+#slider-image-2:target ~ .image-container{
+    left: -600px;
+}
+
+#slider-image-6:target ~ .image-container{
+    left: -1200px;
+}
+
+div.gallery {
+  margin: 15px 5px 15px 5px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 200px;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 5px;
+  text-align: center;
+  font-size: 12px;
+}
+
+
+.footer {
+  margin-top: 20px;
+  padding: 200px 0px 0px 0px;
+  text-align: center;
+}
